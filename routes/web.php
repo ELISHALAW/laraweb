@@ -2,15 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\PostController;
 // Get route example
 Route::get('/', function () {
-    return view('home');
-})->name('home');
+    return view('welcome');
+})->name('welcome');
 
-Route::get('/contact', function(){
-    return view('contact');
-});
+
+Route::resource('posts', PostController::class);
+// Route::get('/contact', function(){
+//     return view('contact');
+// });
 
 
 // Grouped routes Portfolio related routes
@@ -26,7 +28,7 @@ Route::get('/contact', function(){
 
 //     Route::get('/organization', function () {
 //         return view('organization');
-//     });
+//     });                      
 // });
 
 Route::post("/formsubmitted", function (Request $request) {
