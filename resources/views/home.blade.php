@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home 😂</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-</head>
-<body>
+@extends('layouts.default')
+
+@section('header')
+<h2>This is the header</h2>
+
+@endsection
+
+@section('maincontent')
+<main>
     <h1>Home</h1>
 
     <form action="{{ route('formsubmitted') }}" method="POST">
@@ -21,6 +20,10 @@
         <br><br>
         <button type="submit">Submit</button>
     </form>
-    {{-- <a href="{{ route("testpage") }}">Go to test page</a> --}}
-</body>
-</html>
+</main>
+@endsection
+
+@section('footer')
+    <h2>This is the footer</h2>
+@endsection
+{{-- <a href="{{ route("testpage") }}">Go to test page</a> --}}
