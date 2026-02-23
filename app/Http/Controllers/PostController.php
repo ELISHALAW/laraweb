@@ -34,10 +34,10 @@ class PostController extends Controller
         //
         $validatedData = $request->validate([
             'title' => 'required|max:255',
-            'content' => 'required',
+            'body' => 'required',
         ]);
 
-        Post::create($validatedData);
+        Post::create(['title' => $validatedData['title'], 'body' => $validatedData['body']]);
         return redirect()->route('posts.index')->with('success', 'Post created successfully.');
     }
 
@@ -66,7 +66,7 @@ class PostController extends Controller
         //
         $validated = $request->validate([
             'title' => 'required|max:255',
-            'content' => 'required',
+            'body' => 'required',
         ]);
         $post = Post::findOrFail($id);
         $post->update($validated);
