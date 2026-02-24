@@ -2,14 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\EmailUserController;
 // Get route example
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
 
-Route::resource('posts', PostController::class);
+Route::resource('email_users', EmailUserController::class);
 // Route::get('/contact', function(){
 //     return view('contact');
 // });
