@@ -31,17 +31,17 @@ Route::resource('email_users', EmailUserController::class);
 //     });                      
 // });
 
-Route::post("/formsubmitted", function (Request $request) {
-    $request->validate([
-        "fullname" => "required | min:3| max:30",
-        "email" => "required|min:3|max:30|email"
-    ]);
+// Route::post("/formsubmitted", function (Request $request) {
+//     $request->validate([
+//         "fullname" => "required | min:3| max:30",
+//         "email" => "required|min:3|max:30|email"
+//     ]);
 
-    $fullname = $request->input("fullname");
-    $email = $request->input("email");
+//     $fullname = $request->input("fullname");
+//     $email = $request->input("email");
 
-    return "Your full name is {$request->input('fullname')} and your email is {$request->input('email')}";
-})->name("formsubmitted");
+//     return "Your full name is {$request->input('fullname')} and your email is {$request->input('email')}";
+// })->name("formsubmitted");
 
 
 
